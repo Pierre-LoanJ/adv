@@ -19,7 +19,7 @@ All the API return result in a key-value pair format.
 
  `GET /clicks/SOURCE_PARAMETER`
 
-  SOURCE_PARAMETER must be one of the following values: `facebook | google | twitter`.
+  `SOURCE_PARAMETER` must be one of the following values: `facebook | google | twitter`.
   Returns the sum of the 'clicks' metric grouped by the given `SOURCE_PARAMETER`.
 
 
@@ -48,7 +48,7 @@ The CTR is defined as: the number of clicks divided by the number of impressions
 
 * Impression API
 
- `GET /impressions/DATE_PARAMETER
+ `GET /impressions/DATE_PARAMETER`
 
     `DATE_PARAMETER` must be a date using the format `MM-dd-yy`.
     Returns the sum of the 'impressions' metric for the given date.
