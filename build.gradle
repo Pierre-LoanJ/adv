@@ -23,9 +23,11 @@ apply plugin:"org.grails.grails-gsp"
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url 'http://dl.bintray.com/agorapulse/libs' }
 }
 
 dependencies {
+    compile 'org.grails.plugins:aws-sdk-s3:2.2.12'
     compile "joda-time:joda-time:2.9.9"
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"

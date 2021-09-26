@@ -3,8 +3,9 @@
 ## Architecture
 
 This project is a web application built with Grails 3, backed by a H2 database.
-At Bootstrap, the data are parsed and stored in memory.
-The API's are available for querying the data.
+At startup, the bootstrap is calling the S3 bucket where the data.csv is stored.
+The data are then parsed and stored in memory.
+Eventually, the API's are available for querying.
 
 ## API documentation
 

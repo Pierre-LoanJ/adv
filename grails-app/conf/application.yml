@@ -28,6 +28,13 @@ endpoints:
 
 ---
 grails:
+    plugin:
+        awssdk:
+            s3:
+                bucket: 'adverity-loan'
+            region: 'us-east-1'
+            accessKey: 'ACCESS_KEY'
+            secretKey: 'SECRET_KEY'
     mime:
         disable:
             accept:
@@ -105,9 +112,11 @@ environments:
             dbCreate: create-update
             url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     production:
+        server:
+            port: '5000'
         dataSource:
-            dbCreate: none
-            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            dbCreate: create-drop
+            url: jdbc:h2:mem:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
             properties:
                 jmxEnabled: true
                 initialSize: 5
