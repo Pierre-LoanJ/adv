@@ -2,15 +2,19 @@
 
 ## Architecture
 
-This project is a web application built with Grails 3, backed by a H2 database.
+This project is a web application built with Grails 3, backed by a `H2` database.
 It's convenient because there is no extra cost of configuring the infrastructure database.
-At startup, the bootstrap is calling the S3 bucket where the data.csv is stored.
+At startup, the bootstrap is calling the `S3` bucket where the `data.csv` file is stored.
 The data are then parsed and stored in memory.
-I first simply parsed the file from the file system where the file ws dropped initially.
-I encountered the main issue here because generating the war file and deploying it to AWS ended up in being unable to reach the file during bootstrap.
-So I decided to go for a more elaborated solution (and elegant by the way) with S3.
-I used org.grails.plugins:aws-sdk-s3 why is the only extra dependency. (+ joda-time:joda-time)
+I first simply parsed the file from the file system locally, where the file ws dropped initially.
+I encountered the main issue here because generating the war file and deploying it to `AWS` ended up in being unable to reach the file during bootstrap.
+So I decided to go for a more elaborated solution (and elegant by the way) with `S3`.
+I used `org.grails.plugins:aws-sdk-s3` why is the only extra dependency. (+ `joda-time:joda-time`)
 Eventually, the API's are available for querying.
+
+* to start the server locally: `grails run-app` from the project root.
+
+* the API are hosted on AWS and reachable at: `http://adverity2-env.eba-vwqm3vh2.us-east-1.elasticbeanstalk.com/`
 
 ## API documentation
 
